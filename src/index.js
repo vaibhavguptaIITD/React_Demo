@@ -8,13 +8,25 @@ const styles = {
 };
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Vaibhav"
+    };
+  }
+
+  updateName = () => {
+    console.log("this", this);
+    this.setState({
+      name: "Gupta"
+    });
+  };
   render() {
+    console.log("in here");
     return (
       <div style={styles}>
-        <Hello name="CodeSandbox" />
+        <button onClick={this.updateName}>Change name</button>
+        <Hello name={this.state.name} />
         <h2>Start editing to see some magic happen {"\u2728"}</h2>
       </div>
     );
